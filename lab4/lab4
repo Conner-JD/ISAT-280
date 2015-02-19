@@ -1,0 +1,19 @@
+Justin Conner
+Lab 4
+
+Q1:
+Because we literally just created an instance of the App but gave it no attributes
+
+Q2:
+It sets the size to a Null value, which allows us to set the size ourself with size:
+
+Q3:
+This allows us to center the center of the widget on the app
+
+Q4:
+Off screen
+
+Q5:
+change the canvas size
+
+

@@ -12,9 +12,9 @@
 			text: "Roll D12"
 		Widget:
 			canvas:
-				color:
-					rgba(1,0,0,1)
-			Rectangle:
-				size: self.size
-				pos: self.pos
-				source: 'logo.png'
+				Color:
+					rgba: (1, 1, 0,1.0)
+				Rectangle: 
+					size: self.size
+					pos: self.pos
+					source: 'logo.png'
