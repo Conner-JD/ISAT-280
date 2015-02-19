@@ -1,0 +1,20 @@
+<DieRoller>
+	BoxLayout:
+		size: root.size
+		orientation: 'vertical'
+		Button:
+			text: "Roll D6"
+		Button:
+			text: "Roll D8"
+		Button:
+			text: "Roll D10"
+		Button:
+			text: "Roll D12"
+		Widget:
+			canvas:
+				color:
+					rgba(1,0,0,1)
+			Rectangle:
+				size: self.size
+				pos: self.pos
+				source: 'logo.png'
