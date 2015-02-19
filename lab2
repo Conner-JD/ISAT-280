@@ -1,0 +1,107 @@
+Justin Conner
+Lab 2
+1/22/15 - 2/03/15
+--------------
+
+EXERCISE 1:
+
+Q1: 
+7
+
+Q2: 
+this is setting variable 'answer' to the value that is returned from the function sum2(4,5), which is 9
+
+Q3: 
+dir() is a function. It should return the current directory
+
+Q4: 
+the sum3(a, *args) function prints the arguments instead of returning them. You cant set a variable equal to some function that does not return a value (this is why None is returned)
+
+Q5: 
+1) List of int variables 2) Tuple of 4 int variables 3) Dictionary where the keys are 'name1' and 'name2' and their values, respectively, are 'dog' ad 'cats'
+
+Q6 and Q7: 
+
+def foo(listOfInts=[]):
+    """ Takes in a list of ints, sums them, and returns the result """
+    result = 0
+    for number in listOfInts:
+        assert type(number) is int
+	result += number
+    return result
+
+if __name__ == "__main__":
+    print "Question 6: %d" % foo(range(10))
+    print "Question 7: %d" % foo(range(100))
+
+Assessment:
+This isn't a bad lab. If you allow it, I would tell the students that they can use an IDE of their choice. Pycharm is my favorite IDE but for small stuff like this I just use GEdit.
+
+
+EXERCISE 2:
+
+Q1: 
+a.bit_length = Method
+a.denominator = Attribute (int)
+a.numerator = Attribute (int)
+a.conjugate = Method 
+a.imag = Attribute (int)
+a.real = Attribute (int or long)
+
+Q2:
+We created two different instances of the Critter class. This gives us different objects stored in different memory locations, hence, the different hex locations of the objects' __main__'s
+
+Q3:
+local
+
+Q4:
+Yes we can invoke the __init__() method.
+Yes it does generate the same result as the instantiation of crit1.
+
+Q5: (I don't have the book so I'm making an educated guess)
+self.name is a global variable. This is because the 'self' refers to the isntance's attribute 'name'. This means that the 'name' belongs to that specific instance of the class and can now be accessed throughout the class.
+
+Q6:
+AttributeError: 'Critter' object has no attribute 'name'
+
+This is because the 'self' part of the variable is what makes the variable a global variable. Taking 'self' away makes it a local variable that cannot be accessed from other methods within the class. 
+
+Q7:
+def foo1(listOfInts=[]):
+    """ Takes in a list of ints and sums them """
+    result = 0
+    for number in listOfInts:
+        assert type(number) is int
+	result += number
+    return result
+
+# Classy Critter
+# Demonstrates class attributes and static methods
+
+class Critter(object):
+    """A virtual pet"""
+    def __init__(self, petname):
+	print("A new critter has been born!")
+	self.name = petname
+
+    def __str__(self):
+        rep = "Critter object\n"
+	rep += "name: " + self.name + "\n"
+	return rep
+
+    def talk(self):
+	print("Hi. I'm", self.name, "\n")
+
+if __name__ == "__main__":
+    #Excercise 1
+    #print "Question 6: %d" % foo1(range(10))	# Exercise 1
+    #print "Question 7: %d" % foo1(range(100))	# Exercise 1
+
+    #Excercise 2
+    crit1 = Critter("Poochie")
+    crit1.talk()
+    
+
+
+
+

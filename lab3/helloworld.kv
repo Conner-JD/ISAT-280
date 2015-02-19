@@ -1,0 +1,20 @@
+#:import Button kivy.uix.button
+
+
+Button:
+	text: "Play"
+	on_release: self.text="Playing: " + app.sound.source.split('.')[0].replace("_", " ")
+	on_press: app.play_music()
+	background_color: [1,.5,1,1]
+	pos: (200, 200)
+	size_hint: (0, 0)
+	size: (100, 100)
+	pos: (100, 100)
+	
+	Button:
+		text: "Stop"
+		background_color: [1,.5,1,1]
+		pos: (200, 200)
+		size_hint: (0, 0)
+		size: (100, 100)
+		pos: (350, 400)

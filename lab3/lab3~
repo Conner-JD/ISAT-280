@@ -1,0 +1,51 @@
+Justin Conner
+Lab 3
+2.10.15
+
+----------------------
+
+Kivy Anatomy
+Q1:
+OS, Numpy (not built in)
+
+Simple Kivy App:
+Q1:
+Rules, a root widget, dynamic classes, templates
+
+Q2:
+Check the Kivy API
+
+Q3:
+font_size = IntProperty
+background_color = ListProperty
+background_down = StringProperty
+border = ListProperty
+
+Q4:
+background_color: [.75,.5,.25,1] in .kv file
+
+Q5:
+size: (700,500)
+
+Q6:
+pos: (50,50)
+	
+STEP 5:
+on_release: self.text = "Playing: " + app.sound.source.split('.')[0].replace("_", " ")
+
+Q7:
+class HelloWorldApp(App):
+	self.isPlaying = False
+	def play_music(self):           
+		self.sound = SoundLoader.load("Jesse_Cook-Dance_Of_Spring.ogg") 
+		if self.sound and not self.isPlaying:
+		    self.sound.play()
+		    self.isPlaying = True
+		else:
+		    self.sound.stop()
+		    self.isPlaying = False
+
+Q8:
+
+
+

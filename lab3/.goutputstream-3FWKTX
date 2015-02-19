@@ -1,0 +1,19 @@
+from kivy.app import App
+from kivy.core.audio import SoundLoader 
+
+class HelloWorldApp(App):
+	self.isPlaying = False
+	def play_music(self):           
+		self.sound = SoundLoader.load("Jesse_Cook-Dance_Of_Spring.ogg") 
+		if self.sound and not self.isPlaying:
+		    self.sound.play()
+		    self.isPlaying = True
+		else:
+		    self.sound.stop()
+		    self.isPlaying = False
+
+if __name__ == "__main__":
+	HelloWorldApp().run()
+	
+
+
