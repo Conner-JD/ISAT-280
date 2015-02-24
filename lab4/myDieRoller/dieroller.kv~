@@ -1,13 +1,13 @@
 <DieButton@Button>:
 	size: 200, 140
-	size_hint: None, None
+	size_hint: .20, .20
 	pos_hint: {'center_x': 0.5}
 	font_size: 20
 	background_color: 0.25, 0.5, 1, 1
 
 <DieResult@Widget>:
 	size: 200, 200
-	size_hint: None, None
+	size_hint: .20, .20
 	pos_hint: {'center_x': 0.5}
 
 <DieRoller>:
@@ -16,12 +16,16 @@
 		orientation: 'vertical'
 		DieButton:
 			text: "Roll D6"
+			on_press: root.do_roll(‘D6’)
 		DieButton:
 			text: "Roll D8"
+			on_press: root.do_roll(‘D8’)
 		DieButton:
 			text: "Roll D10"
+			on_press: root.do_roll(‘D10’)
 		DieButton:
 			text: "Roll D12"
+			on_press: root.do_roll(‘D12’)
 		DieResult:
 			canvas:
 				Color:
@@ -29,4 +33,4 @@
 				Rectangle: 
 					size: self.size
 					pos: self.pos
-					source: 'logo.png'
+					texture: root.result_texture

@@ -1,12 +1,46 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
+from kivy.properties import NumericProperty
+from kivy.properties import StringProperty
+#from kivy.uix.image import ImageLoader
+from kivy.loader import Loader
+from kivy.core.window import Window
+from kivy.core.image import ImageLoader
 
 class DieRoller(Widget):
-	pass
+	result_texture = ObjectProperty()     
+	
+	roll = NumericProperty()
+	animcount = NumericProperty()
+	die = StringProperty('D6')
+
+	dice = {'D6' : (1, 6),
+		'D8' : (1, 8),
+		'D10' : (1, 10),
+		'D12' : (1, 12)}
+
+	def __init__(self, **kwargs):         	
+		self.result_texture = ImageLoader.load('data/d_blank.png').texture         
+		super(DieRoller, self).__init__(**kwargs)
+
+	def do_roll(self, name=None):
+		self.die = name
+		self.animcount = 15
+		Clock.schedule_interval(self.animate_roll, 0.05)
+		
+	def animate_roll(self, dt):
+		mgname = 'data/%s_%d.png' % (self.die.lower(), self.roll)         
+		self.ids['result'].texture =self.update_image(imgname) 
+		self.roll = random.randint(*self.dice[self.die])
+		self.animcount -= 1
+		if self.animcount == 0:
+			Clock.unschedule(self.animate_roll)
 
 class DieRollerApp(App):
-	build(self):
+	def build(self):
 		return DieRoller()
+
 
 if __name__ == "__main__":
 	DieRollerApp().run()

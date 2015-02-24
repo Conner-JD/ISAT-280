@@ -1,6 +1,10 @@
 Justin Conner
 Lab 4
 
+----------------------------------------------------------------
+
+EXERCISE 1
+
 Q1:
 Because we literally just created an instance of the App but gave it no attributes
 
@@ -14,6 +18,61 @@ Q4:
 Off screen
 
 Q5:
-change the canvas size
+<DieButton@Button>:
+	size: 200, 140
+	size_hint: .20, .20
+	pos_hint: {'center_x': 0.5}
+	font_size: 20
+	background_color: 0.25, 0.5, 1, 1
+
+<DieResult@Widget>:
+	size: 200, 200
+	size_hint: .20, .20
+	pos_hint: {'center_x': 0.5}
+
+<DieRoller>:
+	BoxLayout:
+		size: root.size
+		orientation: 'vertical'
+		DieButton:
+			text: "Roll D6"
+		DieButton:
+			text: "Roll D8"
+		DieButton:
+			text: "Roll D10"
+		DieButton:
+			text: "Roll D12"
+		DieResult:
+			canvas:
+				Color:
+					rgba: (1, 1, 0,1.0)
+				Rectangle: 
+					size: self.size
+					pos: self.pos
+					source: 'logo.png'
+
+
+Q6:
+The buttons are dynamically sized with it
+
+EXTRA CREDIT:
+font_size: [self.size/some number]
+
+---------------------------------------------------------------
+
+EXERCISE 2:
+
+Q1:
+because its a part of the class and we want to be able to access it outside of the class
+
+Q1 v2 ?:
+see animation API (lol..)
+
+Q2:
+using this syntax is the same as using printf in Java. This allows us to replace %s (a string) and %d (a number) with self.die.lower() and self.roll respectively
+
+Q3:
+'data/{0}_{1}.png'.format(self.die.lower(), self.roll) '
+
 
 
