@@ -1,0 +1,43 @@
+Justin Conner
+Lab 5
+
+
+Step 1:
+Q1:
+Linux does not support vibrator
+
+Q2:
+def _vibrate(self, **kwargs):
+        time = kwargs.get('time')
+
+        if vibrator:
+            vibrator.vibrate(int(1000 * time))
+
+    def _pattern(self, **kwargs):
+        pattern = kwargs.get('pattern')
+        repeat = kwargs.get('repeat')
+
+        pattern = [int(1000 * time) for time in pattern]
+
+        if vibrator:
+            vibrator.vibrate(pattern, repeat)
+
+    def _exists(self, **kwargs):
+        return vibrator.hasVibrator()
+
+    def _cancel(self, **kwargs):
+        vibrator.cancel()
+
+
+_vibrate: creates the vibration
+_pattern: sets the vibration pattern
+_exists: checks to see if the device can vibrate
+_cancel: cancels the vibration
+
+Step 2:
+Q1:
+The app is not very modular at all.
+
+Q2:
+Linux does not have GPS
+

@@ -1,0 +1,39 @@
+# File name: floatlayout.kv
+<Button>:
+	color: .8,.9,0,1
+	font_size: 40
+	size_hint: .4, .3
+<Label>:
+	color:.8,.9,0,1
+	font_size: 40
+	size_hint: .4, .3
+
+<ToggleButton>:
+	color: 0.8, 0.8, 0, 1
+	font_size:40
+	size_hint: .4, .3
+ 
+<FloatLayoutWidget>:
+	orientation:'horizontal'
+
+	Button:
+		id:button1 
+		text: 'Hello'
+		pos_hint: {'x': 0, 'top': 1}
+		on_press:app.change_button_text()
+
+	ToggleButton:
+		id:button2
+		pos_hint:{'right':1,'top':1}
+		text: 'Start' if self.state == 'normal' else 'Stop'
+		on_state: app.gps.start() if self.state == 'down' else app.gps.stop
+
+	Label:
+		id:label1
+		text: 'World!'
+		pos_hint: {'x':0.3, 'y': 0}
+
+	Label:
+		id:label2
+		text: app.gps_location
+		pos_hint: {'x':0.3, 'y':0.3}
