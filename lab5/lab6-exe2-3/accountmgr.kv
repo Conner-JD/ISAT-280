@@ -1,0 +1,109 @@
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+
+<LoginScreen>:
+    name: 'screen1'
+    canvas:
+        Color:
+            hsv: 0.2, .5, .3
+        Rectangle:
+            source: 'background.jpg'
+            size: self.size
+
+    GridLayout:
+        pos_hint:{'center_x':.5, 'center_y':.35}
+        row_default_height: 5
+        size_hint: .9, .2
+        cols:2
+        spacing: 5
+        Label:
+            text:'Username'
+            size_hint_y:.2
+        TextInput:
+            id:uname_input
+        Label:
+            text:'Password'
+            size_hint_y:.2
+        TextInput:
+            id:pass_input
+            password: True
+        Button:
+            text:'Sign Up'
+            on_press:root.manager.current = 'screen2'
+        Button:
+            text:'Login'
+            on_press:root.login_auth()
+
+
+<NewUserScreen>:
+    name:'screen2'
+    canvas:
+        Color:
+            hsv: 0.6, .5, .3
+        Rectangle:
+            source:'background.jpg'
+            size: self.size
+
+    GridLayout:
+        pos_hint:{'center_x':.5, 'center_y':.5}
+        row_default_height: 5
+        size_hint: .9, .4
+        cols:2
+        Label:
+            text:'First Name'
+        TextInput:
+            id:first_input
+            multiline:False
+        Label:
+            text:'Last Name'
+        TextInput:
+            id:last_input
+            multiline:False
+        Label:
+            text:'Username'
+            size_hint_y:.2
+        TextInput:
+            id:uname_input
+            multiline:False
+        Label:
+            text:'Password'
+        TextInput:
+            id:pass_input
+            password: True
+            multiline:False
+        Button:
+            text:'Go Back'
+            on_press: root.manager.current='screen1'
+        Button:
+            text:'Get Started'
+            on_press:root.GetStarted()
+
+<WhatScreen>:
+    name:'screen3'
+    canvas:
+        Color:
+            hsv: 0.9, .5, .3
+        Rectangle:
+            source:'background.jpg'
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: uname_label
+
+        Button:
+            text: 'Back to SQUARE 1'
+            on_press: root.manager.current='screen1'
+            on_press: root.manager.screens[0].ids['uname_input'].text=''
+            on_press: root.manager.screens[0].ids['pass_input'].text=''
+
+<AccountMgr>:
+    canvas:
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    transition: RiseInTransition()
+    LoginScreen:
+    NewUserScreen:
+    WhatScreen:

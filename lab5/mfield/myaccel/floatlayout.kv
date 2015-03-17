@@ -1,0 +1,21 @@
+# File name: floatlayout.kv
+<Button>:
+	color: .8,.9,0,1
+	font_size: 40
+	size_hint: .4, .3
+<Label>:
+	color:.8,.9,0,1
+	font_size:40
+	size_hint: .4, .3
+ 
+<FloatLayoutWidget>:
+	orientation:'horizontal'
+	Button:
+		id:button1 
+		text: 'Hello'
+		pos_hint: {'x': 0, 'top': 1}
+		on_press:app.change_button_text()
+	Label:
+		id:label1
+		text: 'World!'
+		pos_hint: {'x':0.3, 'y': 0}

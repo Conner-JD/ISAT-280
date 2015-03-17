@@ -1,0 +1,3 @@
+title=myaccel
+author=salib
+orientation=landscape

@@ -1,0 +1,3 @@
+title=lab6-gps
+author=emil
+orientation=landscape

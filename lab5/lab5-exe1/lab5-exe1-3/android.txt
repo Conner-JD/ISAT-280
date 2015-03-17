@@ -1,0 +1,3 @@
+title=gps2
+author=tito
+orientation=landscape

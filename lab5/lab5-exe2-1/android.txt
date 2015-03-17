@@ -1,0 +1,3 @@
+title=wifi
+author=Justin Conner
+orientation=landscape

@@ -35,5 +35,29 @@ _exists: checks to see if the device can vibrate
 _cancel: cancels the vibration
 
 Step 2:
+Q1:
+The app is not very modular at all. Poor design.
+
+Q2:
+Linux does not have GPS.
+Try it on a platform that has gps or plug in and install a gps onto the machine.
+
+Q3:
+onLocationChanged, - updates everything including lat, long, speed, altitude, and bearing.
+onProviderEnabled, - sets root status to provider enabled
+onProviderDisabled, - sets root status to provider disablede
+onStatusChanged, - changes root status to what it should be
+configure, - configures the gps
+start, - starts the gps
+stop, - starts the gps
+instance - creates an instance of the gps
+
+Step 3:
+Q2:
+This line of code represents the gos location in string format.
+It joins both items (k and v) from the arguments it was passed and puts them on different lines.
+
+Q3:
+It used a relative location that did not require a GPS.
 
 

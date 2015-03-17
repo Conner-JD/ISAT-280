@@ -1,0 +1,3 @@
+title=myorient
+author=salib
+orientation=landscape
